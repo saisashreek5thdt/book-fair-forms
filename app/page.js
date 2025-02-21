@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Upload } from "lucide-react";
+import { toast } from "sonner"
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -34,7 +35,8 @@ export default function Home() {
     if (formData.books.length < 15) {
       setFormData({ ...formData, books: [...formData.books, ""] });
     } else {
-      alert("Maximum of 15 books can be added.");
+      //alert("Maximum of 15 books can be added.");
+      toast("You have reached the limit.")
     }
   };
 
@@ -43,7 +45,8 @@ export default function Home() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      alert("Form submitted successfully!");
+      //alert("Form submitted successfully!");
+      toast("You have submitted the form successfully.")
     }, 2000);
   };
 
