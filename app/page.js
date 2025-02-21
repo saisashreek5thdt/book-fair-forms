@@ -11,6 +11,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     logo: null,
     publisherName: "",
+    publisherEmail: "",
     boothNumber: "",
     books: [""],
   });
@@ -74,6 +75,13 @@ export default function Home() {
                 name="publisherName"
                 placeholder="Publisher Name"
                 value={formData.publisherName}
+                onChange={handleChange}
+                required
+              />
+              <Input
+                name="publisherEmail"
+                placeholder="Publisher Email"
+                value={formData.publisherEmail}
                 onChange={handleChange}
                 required
               />
