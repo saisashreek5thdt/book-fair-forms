@@ -31,7 +31,11 @@ export default function Home() {
   };
 
   const addBookField = () => {
-    setFormData({ ...formData, books: [...formData.books, ""] });
+    if (formData.books.length < 15) {
+      setFormData({ ...formData, books: [...formData.books, ""] });
+    } else {
+      alert("Maximum of 15 books can be added.");
+    }
   };
 
   const handleSubmit = async (e) => {
